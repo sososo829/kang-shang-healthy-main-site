@@ -163,7 +163,7 @@ The website features products across 10 main categories:
 4. **茶包類** (Tea Bags) - Herbal tea blends
 5. **乾果類** (Dried Fruits) - Premium dried fruits and nuts
 6. **豆類** (Beans) - Various beans and legumes
-7. **高級海味** (Premium Seafood) - High-end seafood products
+7. **花膠蔘茸海味** (Premium Seafood) - High-end seafood products
 8. **雜貨類** (Groceries) - General grocery items
 9. **中藥材** (Herbal Medicine) - Traditional Chinese herbs
 10. **湯包類** (Soup Packs) - Ready-to-use soup ingredients

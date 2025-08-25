@@ -5207,7 +5207,7 @@ export const productCategories = {
     { id: 'tea_bags', name: '茶包類' },
     { id: 'dried_fruits', name: '乾果類' },
     { id: 'beans', name: '豆類' },
-    { id: 'premium_seafood', name: '高級海味' },
+    { id: 'premium_seafood', name: '花膠蔘茸海味' },
     { id: 'groceries', name: '雜貨類' },
     { id: 'herbal_medicine', name: '中藥材' },
     { id: 'soup_packs', name: '湯包類' }
