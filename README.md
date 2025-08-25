@@ -52,6 +52,30 @@ Kang Shang Healthy is a React-based e-commerce platform featuring:
 - **Hosting**: Firebase Hosting
 - **Language**: JavaScript (ES6+)
 - **Build Tool**: Create React App
+- **SEO**: React Helmet, Structured Data, Meta Tags
+
+## 🎯 SEO Optimization
+
+### Comprehensive SEO Implementation
+- **Meta Tags**: Open Graph, Twitter Cards, and standard meta tags
+- **Structured Data**: JSON-LD schema markup for better search engine understanding
+- **Sitemap**: XML sitemap for search engine crawling
+- **Robots.txt**: Proper crawler guidance
+- **Canonical URLs**: Prevents duplicate content issues
+- **Hreflang**: Multi-language SEO support (Chinese/English)
+- **Google Analytics**: Integrated tracking for performance monitoring
+
+### SEO Features
+- **Dynamic Meta Tags**: Page-specific titles and descriptions
+- **Bilingual SEO**: Optimized for both Chinese and English search
+- **Local SEO**: Hong Kong location targeting
+- **Product Schema**: Rich snippets for product listings
+- **Organization Schema**: Business information markup
+- **Performance Optimized**: Fast loading times and Core Web Vitals
+
+### Target Keywords
+- **Primary**: 花旗蔘 (Ginseng), 威斯康辛州花旗蔘 (Wisconsin Ginseng), 康尚 (Kang Shang)
+- **Secondary**: 參茸海味 (Traditional Chinese Medicine), 健康食品 (Health Products), 養生 (Wellness)
 
 ## 📦 Installation & Setup
 

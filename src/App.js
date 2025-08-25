@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 // --- 引入模組化組件 ---
 import Navbar from './components/Navbar';
@@ -10,6 +11,8 @@ import WhyUs from './components/WhyUs';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import ProductsPage from './pages/ProductsPage';
+import SEO from './components/SEO';
+import { getSEOContent } from './utils/seo-config';
 
 // --- 引入產品數據 ---
 import { allProducts } from './data/products';
@@ -162,15 +165,25 @@ const content = {
 const HomePage = ({ lang, setLang }) => {
   const currentContent = content[lang];
   
+  const seoContent = getSEOContent('homepage', lang);
+  
   return (
-    <main className="relative">
-      <Hero content={currentContent.hero} />
-      <About content={currentContent.about} />
-      <Products content={currentContent.products} lang={lang} />
-      <WhyUs content={currentContent.whyUs} />
-      {/* <Testimonials content={currentContent.testimonials} /> */}
-      <Contact content={currentContent.contact} lang={lang} />
-    </main>
+    <>
+      <SEO 
+        title={seoContent.title}
+        description={seoContent.description}
+        keywords={seoContent.keywords}
+        lang={lang}
+      />
+      <main className="relative">
+        <Hero content={currentContent.hero} />
+        <About content={currentContent.about} />
+        <Products content={currentContent.products} lang={lang} />
+        <WhyUs content={currentContent.whyUs} />
+        {/* <Testimonials content={currentContent.testimonials} /> */}
+        <Contact content={currentContent.contact} lang={lang} />
+      </main>
+    </>
   );
 };
 
@@ -219,14 +232,16 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="font-sans bg-white overflow-x-hidden">
-        <Navbar lang={lang} setLang={handleLanguageChange} content={currentContent} />
-        <Routes>
-          <Route path="/" element={<HomePage lang={lang} setLang={handleLanguageChange} />} />
-          <Route path="/products" element={<ProductsPage lang={lang} />} />
-        </Routes>
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="font-sans bg-white overflow-x-hidden">
+          <Navbar lang={lang} setLang={handleLanguageChange} content={currentContent} />
+          <Routes>
+            <Route path="/" element={<HomePage lang={lang} setLang={handleLanguageChange} />} />
+            <Route path="/products" element={<ProductsPage lang={lang} />} />
+          </Routes>
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }

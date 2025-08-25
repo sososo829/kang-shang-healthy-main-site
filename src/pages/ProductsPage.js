@@ -4,6 +4,8 @@ import SectionTitle from '../components/common/SectionTitle';
 import Button from '../components/common/Button';
 import ProductCard from '../components/common/ProductCard';
 import { allProducts, getProductCategories } from '../data/products';
+import SEO from '../components/SEO';
+import { getSEOContent } from '../utils/seo-config';
 
 // --- 產品頁面 ---
 const ProductsPage = ({ lang = 'zh' }) => {
@@ -88,10 +90,20 @@ const ProductsPage = ({ lang = 'zh' }) => {
     setSortBy('name');
   };
 
+  const seoContent = getSEOContent('products', lang);
+
   return (
-    <div className="min-h-screen pt-20" >
-      {/* Header */}
-      <div className="bg-white shadow-sm">
+    <>
+      <SEO 
+        title={seoContent.title}
+        description={seoContent.description}
+        keywords={seoContent.keywords}
+        url="/products"
+        lang={lang}
+      />
+      <div className="min-h-screen pt-20" >
+        {/* Header */}
+        <div className="bg-white shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold" style={{ color: colors.primary.sage }}>
@@ -291,6 +303,7 @@ const ProductsPage = ({ lang = 'zh' }) => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
